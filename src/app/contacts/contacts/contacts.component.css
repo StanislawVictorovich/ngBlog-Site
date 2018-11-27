@@ -1,0 +1,9 @@
+header {
+  background: url("https://cdn.oboi7.com/static/images/m/e6/57/e6574735ef617bc8c2df47963e73c6af25eeaa96.jpg") no-repeat;
+  position: relative;
+  background-color: black;
+  background-size: cover;
+  height: 100vh;
+  min-height: 25rem;
+  overflow: hidden;
+}

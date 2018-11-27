@@ -1,0 +1,9 @@
+<carousel>
+  <slide *ngFor="let element of newsService.newsContainer">
+    <img src="https://valor-software.com/ngx-bootstrap/assets/images/nature/{{element.id}}.jpg" alt="first slide">
+    <div class="carousel-caption d-none d-md-block">
+      <h3>{{ element.title }}</h3>
+      <p>{{ element.body }}</p>
+    </div>
+  </slide>
+</carousel>
