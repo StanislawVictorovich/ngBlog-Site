@@ -6,15 +6,19 @@ import { BlogModule } from './blog.module'
 })
 export class BlogService {
 
-  public blogsContainer = [];
+  public cards = [];
+  public users = [];
 
   constructor() { }
 
-  public async getNewsCards() {
+  public async getBlogCards() {
     try {
-      let newsFeed: Promise<Response> = await fetch('https://jsonplaceholder.typicode.com/posts')
+      let feed: Promise<Response> = await fetch('https://jsonplaceholder.typicode.com/albums')
                     .then(response => response.json())
-                    .then(news => this.blogsContainer = news.slice(0, 8));
+                    .then(news => this.cards = news.slice(0, 8));
+      feed = await fetch('https://jsonplaceholder.typicode.com/users')
+                    .then(response => response.json())
+                    .then(news => this.users = news.slice(0, 8));
     }
     catch(e) {
       console.log(e);

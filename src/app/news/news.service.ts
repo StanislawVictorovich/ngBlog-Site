@@ -12,7 +12,7 @@ export class NewsService {
 
   public async getNewsCards() {
     try {
-      let newsFeed: Promise<Response> = await fetch('https://jsonplaceholder.typicode.com/posts')
+      const feed: Promise<Response> = await fetch('https://jsonplaceholder.typicode.com/posts')
                     .then(response => response.json())
                     .then(news => this.newsContainer = news.slice(0, 8));
     }
