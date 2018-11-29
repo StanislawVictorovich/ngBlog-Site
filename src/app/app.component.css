@@ -6,6 +6,7 @@
     transition: 0.5s ease-in;
 	-webkit-transition: 0.5s ease-in;
 	-moz-transition: 0.5s ease-in;
+  text-shadow: 3px 4px 5px black;
 }
 .top-nav .navbar-nav li .nav-link {
     color: #fff;
@@ -28,6 +29,9 @@
 	font-size: 28px;
 	color: #fff;
 	font-family: 'Montserrat', sans-serif;
+	transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	-moz-transition: 0.3s ease-in;
 }
 .top-nav.light-header{
 	height: 60px;
@@ -39,6 +43,13 @@
 }
 .top-nav.light-header .navbar-brand{
 	color: #212121;
+}
+.navbar-brand:hover {
+  transform: scale(1.4);
+  color: yellow;
+	transition: 0.3s ease-in;
+	-webkit-transition: 0.3s ease-in;
+	-moz-transition: 0.3s ease-in;
 }
 .top-nav.light-header .navbar-nav li .nav-link {
     color: #212121;

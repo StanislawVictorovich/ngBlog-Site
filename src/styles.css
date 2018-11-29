@@ -1,6 +1,6 @@
 h1, h2 {
-  text-shadow: 0.1em 0.1em 0.2em black; 
   color: aliceblue;
+  text-shadow: 4px 5px 5px black;
 }
 
 header {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import { NewsService } from '../news.service';
+import { data } from '../../mock-data';
 
 @Component({
   selector: 'app-news-list',

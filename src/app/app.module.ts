@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
@@ -15,6 +16,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     AppRoutingModule,
     ButtonsModule.forRoot()
   ],
@@ -22,4 +24,3 @@ import { AppComponent } from './app.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-
