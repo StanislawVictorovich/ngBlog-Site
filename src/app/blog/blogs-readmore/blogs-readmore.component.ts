@@ -2,7 +2,6 @@ import { Component, OnInit, Input, Output, TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BlogService } from '../blog.service';
-import { data } from '../../mock-data';
 
 @Component({
   selector: 'app-blogs-readmore',
@@ -11,12 +10,12 @@ import { data } from '../../mock-data';
   providers: [ BlogService ]
 })
 export class BlogsReadmoreComponent implements OnInit {
-  @Input() i:number;
+  @Input() indexOfBlogPost:number;
   public modalRef: BsModalRef;
-  public items: any[];
+  //public items: any[];
 
   constructor(private blogService: BlogService, private modalService: BsModalService) { 
-    this.items = Array(15).fill(0);
+    //this.items = Array(15).fill(0);
   }
 
   ngOnInit() {
