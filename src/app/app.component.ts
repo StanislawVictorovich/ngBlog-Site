@@ -13,8 +13,4 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  public test() { // TESTING FUNCTION - DELETE AFTER DEBUG
-    
-  }
 }

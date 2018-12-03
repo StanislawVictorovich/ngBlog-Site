@@ -16,7 +16,4 @@ export class BlogsReadmoreContentComponent implements OnInit {
     this.blogService.getData(this.indexOfBlogPost);
   }
 
-  private test(){
-    console.log(this.blogService.posts);
-  }
 }
