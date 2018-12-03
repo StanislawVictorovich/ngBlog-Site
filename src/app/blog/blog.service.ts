@@ -16,11 +16,11 @@ export class BlogService {
   constructor(private getDataService: GetDataService) { 
   }
 
-  public getData():void {
+  public getData(indexOfPost:number):void {
     this.getDataService.getHttpData(`albums`, elements => this.albums = elements);    
     this.getDataService.getHttpData(`users`, elements => this.users = elements);    
-    this.getDataService.getHttpData(`posts`, elements => this.posts = elements);    
-    this.getDataService.getHttpData(`comments`, elements => this.comments = elements);    
+    this.getDataService.getHttpData(`posts/${indexOfPost}`, elements => this.posts = elements);    
+    this.getDataService.getHttpData(`posts/${indexOfPost}/comments`, elements => this.comments = elements); console.log(this.posts);   
   }
   
 }

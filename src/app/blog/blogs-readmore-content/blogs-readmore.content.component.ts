@@ -13,7 +13,7 @@ export class BlogsReadmoreContentComponent implements OnInit {
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
-    
+    this.blogService.getData(this.indexOfBlogPost);
   }
 
 }
