@@ -4,21 +4,21 @@
         <!-- Post Content Column -->
         <div class="col-lg-8">
           <!-- Title -->
-          <h1 class="mt-4">{{ blogService.albums[i].title }}</h1>
+          <h1 class="mt-4">{{ blogService.getPostByIndex(indexOfBlogPost) }}</h1>
           <!-- Author -->
           <p class="lead">
             by
-            <a href="#">{{ blogService.users[i].name }}</a>
+            <a href="#">{{ blogService.getUserNameByIndex(indexOfBlogPost) }}</a>
           </p>
           <hr>
           <!-- Date/Time -->
-          <p>Posted on January 1, 2018 at 12:00 PM <-- index </p>
+          <p>Posted on January 1, 2018 at 12:00 PM</p>
           <hr>
           <!-- Preview Image -->
-          <img class="img-fluid rounded" src="http://placehold.it/900x300" alt="">
+          <img class="img-fluid rounded" src="{{blogService.getPostImageByIndex(indexOfBlogPost)}}" alt="">
           <hr>
           <!-- Post Content -->
-          <p class="lead">{{ blogService.posts[i].body }}</p>
+          <p class="lead">{{ blogService.getBlogsBodyText() }}</p>
 
           <hr>
 
@@ -26,24 +26,22 @@
           <div class="card my-4">
             <h5 class="card-header">Leave a Comment:</h5>
             <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+              <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+              <button class="btn btn-primary">Submit</button>
             </div>
           </div>
 
           <!-- Single Comment -->
         <ng-container *ngFor="let element of blogService.comments; let j = index">
-          <div class="media mb-4" *ngIf="i == element.postId">
+          <!--<div class="media mb-4" *ngIf="indexOfBlogPost == element.postId">-->
             <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
             <div class="media-body">  
-              <h5 class="mt-0"><!--{{ blogService.users[j].name }}--></h5>
+              <h5 class="mt-0">{{ blogService.getUserNameByIndex(j) }}</h5>
                 {{ element.body }}
             </div>
-          </div>
+          <!--</div>-->
         </ng-container>
 
         </div>

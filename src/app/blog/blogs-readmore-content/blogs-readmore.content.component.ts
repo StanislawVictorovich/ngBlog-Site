@@ -5,16 +5,15 @@ import { BlogService } from '../blog.service';
   selector: 'app-blogs-readmore-content',
   templateUrl: './blogs-readmore.content.component.html',
   styleUrls: ['./blogs-readmore.content.component.css'],
-  providers: [ BlogService ]
 })
 export class BlogsReadmoreContentComponent implements OnInit {
 
-  @Input() i:number;
+  @Input() indexOfBlogPost:number;
 
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
-    
+    this.blogService.getData(this.indexOfBlogPost);
   }
 
 }

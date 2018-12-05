@@ -1,34 +1,30 @@
-interface User {
+export interface Users {
   id: number,
   name: string,
   username: string,
-  email: string
+  email: string,
+  company: {
+    catchPhrase: string;
+  }
 }
 
-interface Albums {
+export interface Albums {
   userId: number,
   id: number,
   title: string
 }
 
-interface Posts {
+export interface Posts {
   userId: number,
   id: number,
   title: string,
   body: string
 }
 
-interface Comments {
+export interface Comments {
   postId: number,
   id: number,
   name: string,
   email: string,
   body: string
-}
-
-export interface Data {
-  albums: Albums[],
-  users: User[],
-  posts: Posts[],
-  comments: Comments[]
 }

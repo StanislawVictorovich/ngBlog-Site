@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { NewsModule } from './news.module';
-import { data } from '../mock-data';
+import { GetDataService } from '../get-data.service';
+import { Albums } from '../data';
 
 @Injectable({
   providedIn: NewsModule
 })
 export class NewsService {
 
-  public newsContainer = [];
+  private newsContainer: Albums[];
 
-  constructor() {
-    this.newsContainer = data.albums;
+  constructor(private getDataService: GetDataService) {}
+
+  public getData() {
+    this.getDataService.getHttpData(`albums`, elements => this.newsContainer = elements.slice(0,8));
   }
-
 }
