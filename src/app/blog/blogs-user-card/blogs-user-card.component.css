@@ -20,11 +20,11 @@
 }
 
 body, html {
-   font-family: 'Roboto Slab', serif;
-    margin: 0;
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
   width: 100%;
-height: 100%;
-    padding: 0;
+  height: 100%;
+  padding: 0;
 }
 
 body {
@@ -119,11 +119,11 @@ h1{
 }
 .container:hover .front,
 .container:hover .back{
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 .back{
@@ -150,31 +150,31 @@ h1{
 }
 
 .container .back{
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .container .front{
-    -webkit-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-}
-
-.container:hover .back{
   -webkit-transform: rotateY(0deg);
           transform: rotateY(0deg);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
+.container:hover .back{
+-webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+-webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+}
+
 .container:hover .front{
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+-webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+-webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
 }
 
 .front .inner p{
