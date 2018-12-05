@@ -1,4 +1,4 @@
-export interface Users {
+export interface User {
   id: number,
   name: string,
   username: string,
@@ -8,20 +8,20 @@ export interface Users {
   }
 }
 
-export interface Albums {
+export interface Album {
   userId: number,
   id: number,
   title: string
 }
 
-export interface Posts {
+export interface Post {
   userId: number,
   id: number,
   title: string,
   body: string
 }
 
-export interface Comments {
+export interface Comment {
   postId: number,
   id: number,
   name: string,

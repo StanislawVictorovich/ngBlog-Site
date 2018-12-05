@@ -1,0 +1,7 @@
+<div class="media mb-4" *ngFor="let comment of blogPostComments; let i = index">
+  <img class="d-flex mr-3 rounded-circle" src="{{ getUserAvatarByIndex(i) }}" alt="">
+  <div class="media-body">  
+    <h5 class="mt-0">{{ comment.email }}</h5>
+      {{ comment.body }}
+  </div>
+</div>

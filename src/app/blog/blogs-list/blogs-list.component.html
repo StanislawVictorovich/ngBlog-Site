@@ -1,40 +1,24 @@
 <div class='blogscontainer'>
-
-  <div class="row" *ngFor="let element of blogService.albums; let i = index">
-    <ng-container *ngIf="blogService.users[i] && element">
+  <div class="row" *ngFor="let album of albums; let i = index">
+    <ng-container *ngIf="users[i] && album">
       <div class="col" >
-        <section class="cards">
-          <article class="card card--1">
-            <div class="card__img" [ngStyle]="{ 'background' : 'url(https://picsum.photos/200/300/?image='+i+') center/cover no-repeat' }">
-            </div>
-            <a href="#" class="card_link">
-              <div class="card__img--hover" [ngStyle]="{ 'background' : 'url(https://picsum.photos/200/300/?image='+i+') center/cover no-repeat' }"></div>
-            </a>
-            <div class="card__info">
-              <span class="card__category">{{ blogService.users[i].company.catchPhrase }}</span>
-              <h3 class="card__title">{{ element.title }}</h3>
-              <span class="card__by">by <a class="card__author" title="author">{{ blogService.getUserNameByIndex(i) }}</a></span>
-            </div>
-          </article>
-        </section>
-      <app-blogs-readmore [indexOfBlogPost]="i"></app-blogs-readmore> 
-    </div>
+        <app-blogs-preview-card 
+          [user]="users[i]" 
+          [album]="albums[i]"
+          [imagePostStyleUrl]="'url('+getPostImageByIndex(i)+')'">
+        </app-blogs-preview-card>
+        <app-blogs-readmore 
+          [user]="users[i]" 
+          [album]="albums[i]"
+          [indexOfBlogPost]="i">
+        </app-blogs-readmore>
+      </div>
       <div class="col" ontouchstart="this.classList.toggle('hover');">
-          <div class="container">
-            <div class="front" [ngStyle]="{ 'background' : 'url(https://loremflickr.com/320/240?lock='+i+') center/cover no-repeat' }">
-              <div class="inner">
-                <p>{{ blogService.getUserNameByIndex(i) }}</p>
-                <span>{{ blogService.getUsersEmailByIndex(i) }}</span>
-              </div>
-            </div>
-            <div class="back">
-              <div class="inner">
-                <p>{{ blogService.getUsersCatchPhraseByIndex(i) }}</p>
-              </div>
-            </div>
-          </div>
+        <app-blogs-user-card 
+          [user]="users[i]"
+          [imageAvatarStyleUrl]="'url('+getUsersAvatarByIndex(i)+')'">
+        </app-blogs-user-card>
       </div>    
     </ng-container>
   </div>
-
 </div>
