@@ -1,54 +1,33 @@
 import { Injectable } from '@angular/core';
-import { BlogModule } from './blog.module'
-import { Albums, Users, Posts, Comments } from '../data';
-import { GetDataService } from '../get-data.service';
-import { URL_IMAGE, URL_AVATAR } from '../constants';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { BlogModule } from './blog.module';
+import { Album, User, Post, Comment } from '../data';
+import { URL_DATA } from '../constants';
 
-@Injectable({
-  providedIn: BlogModule
-})
+@Injectable()
 export class BlogService {
 
-  public albums: Albums[];
-  public users: Users[];
-  public posts: Posts;
-  public comments: Comments[];
+  constructor(private http: HttpClient) {  }
 
-  constructor(private getDataService: GetDataService) { 
+  public getAlbums(): Observable<Album[]> {
+    return this.http.get<Album[]>(`${URL_DATA}albums`);
   }
 
-  public getData(indexOfPost:number):void {
-    this.getDataService.getHttpData(`albums`, elements => this.albums = elements);    
-    this.getDataService.getHttpData(`users`, elements => this.users = elements);    
-    this.getDataService.getHttpData(`posts/${indexOfPost+1}`, elements => this.posts = elements);  
-    this.getDataService.getHttpData(`posts/${indexOfPost+1}/comments`, elements => this.comments = elements);
-  }
-  
-  public getPostByIndex(index:number):string {
-    return this.albums[index].title;
+  public getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(`${URL_DATA}users`);
   }
 
-  public getUserNameByIndex(index:number):string {
-    return this.users[index].name;
+  public getPostByIndex(index:number): Observable<Post> {
+    return this.http.get<Post>(`${URL_DATA}posts/${index}`);
   }
 
-  public getBlogsBodyText():string {
-    return this.posts.body;
+  public getPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${URL_DATA}posts`);
   }
 
-  public getPostImageByIndex(index:number):string {
-    return `${URL_IMAGE}${index}`;
+  public getPostCommentsByIndex(index: number): Observable<Comment> {
+    return this.http.get<Comment>(`${URL_DATA}posts/${index}/comments`);
   }
 
-  public getUsersEmailByIndex(index:number):string {
-    return this.users[index].email;
-  }
-
-  public getUsersCatchPhraseByIndex(index:number):string {
-    return this.users[index].company.catchPhrase;
-  }
-
-  public getUsersAvatarByIndex(index:number): string {
-    return `${URL_AVATAR}${index}`;
-  }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NewsRoutingModule } from './news-routing.module';
 import { NewsListComponent } from './news-list/news-list.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { NewsService } from './news.service';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     CarouselModule.forRoot()
   ],
   declarations: [NewsListComponent],
+  providers: [ NewsService ]
 })
 export class NewsModule { }
 

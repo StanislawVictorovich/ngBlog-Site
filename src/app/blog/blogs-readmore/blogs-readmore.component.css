@@ -1,4 +1,4 @@
-.buttonReadMore {
+.button-read-more {
   color: white !important;
   font-size: 18px;
   letter-spacing: 2px;
@@ -15,7 +15,7 @@
   z-index: 2;
 }
 
-.buttonReadMore:before {
+.button-read-more:before {
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   position: absolute;
@@ -28,14 +28,14 @@
   background-color: #644cad;
   z-index: -1;
 }
-.buttonReadMore:hover:before {
+.button-read-more:hover:before {
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   left: 0;
   right: 0;
   opacity: 1;
 }
-.buttonReadMore:focus:before {
+.button-read-more:focus:before {
   -webkit-transition: 0.5s all ease;
   transition: 0.5s all ease;
   left: 0;

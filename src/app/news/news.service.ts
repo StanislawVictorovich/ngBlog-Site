@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { NewsModule } from './news.module';
-import { GetDataService } from '../get-data.service';
-import { Albums } from '../data';
+import { Album } from '../data';
+import { URL_DATA } from '../constants';
 
-@Injectable({
-  providedIn: NewsModule
-})
+@Injectable()
 export class NewsService {
 
-  private newsContainer: Albums[];
+  constructor(private http: HttpClient) {  }
 
-  constructor(private getDataService: GetDataService) {}
-
-  public getData() {
-    this.getDataService.getHttpData(`albums`, elements => this.newsContainer = elements.slice(0,8));
+  public getAlbums(): Observable<Album[]> {
+    return this.http.get<Album[]>(`${URL_DATA}albums`);
   }
 }

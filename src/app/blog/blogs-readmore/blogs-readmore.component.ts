@@ -1,28 +1,24 @@
-import { Component, OnInit, Input, Output, TemplateRef } from '@angular/core';
+import { Component, Input, Output, TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
-import { BlogService } from '../blog.service';
+import { User, Album } from '../../data';
 
 @Component({
   selector: 'app-blogs-readmore',
   templateUrl: './blogs-readmore.component.html',
-  styleUrls: ['./blogs-readmore.component.css'],
-  providers: [ BlogService ]
+  styleUrls: ['./blogs-readmore.component.css']
 })
-export class BlogsReadmoreComponent implements OnInit {
-  @Input() indexOfBlogPost:number;
-  public modalRef: BsModalRef;
-  //public items: any[];
+export class BlogsReadmoreComponent {
+  
+  @Input() user: User;
+  @Input() album: Album;
+  @Input() indexOfBlogPost: number;
 
-  constructor(private blogService: BlogService, private modalService: BsModalService) { 
-    //this.items = Array(15).fill(0);
-  }
+  private modalRef: BsModalRef;
 
-  ngOnInit() {
-    
-  }
+  constructor(private modalService: BsModalService) {}
 
-  public openModal(template: TemplateRef<any>) {
+  private openModal(template: TemplateRef<BsModalRef>) {
     this.modalRef = this.modalService.show(template);
   }
 
