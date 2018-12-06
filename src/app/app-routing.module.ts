@@ -10,19 +10,19 @@ const routes: Routes = [
   },
   {
     path: 'news',
-    loadChildren: 'app/news/news.module#NewsModule'
+    loadChildren: './news/news.module#NewsModule'
   },
   {
     path: 'contacts',
-    loadChildren: 'app/contacts/contacts.module#ContactsModule'
+    loadChildren: './contacts/contacts.module#ContactsModule'
   },
   {
     path: 'blog',
-    loadChildren: 'app/blog/blog.module#BlogModule'
+    loadChildren: './blog/blog.module#BlogModule'
   },
   {
     path: 'home',
-    loadChildren: 'app/home/home.module#HomeModule'
+    loadChildren: './home/home.module#HomeModule'
   }
 ];
 

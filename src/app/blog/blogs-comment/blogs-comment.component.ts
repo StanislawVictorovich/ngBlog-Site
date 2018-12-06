@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BlogService } from '../blog.service';
 import { URL_AVATAR } from '../../constants';
+import { Comment } from '../../data';
 
 @Component({
   selector: 'app-blogs-comment',
@@ -9,7 +10,7 @@ import { URL_AVATAR } from '../../constants';
 })
 export class BlogsCommentComponent implements OnInit {
 
-  @Input() indexOfBlogPost: number;  
+  @Input() indexOfBlogPost: number;
 
   private blogPostComments: Comment[];
 
@@ -19,7 +20,7 @@ export class BlogsCommentComponent implements OnInit {
     this.blogService.getPostCommentsByIndex(this.indexOfBlogPost).subscribe(comments => this.blogPostComments = comments);
   }
 
-  private getUserAvatarByIndex(index:number):string {
+  private getUserAvatarByIndex(index: number): string {
     return `${URL_AVATAR}${index}`;
   }
 

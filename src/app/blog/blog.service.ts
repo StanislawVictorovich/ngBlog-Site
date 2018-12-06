@@ -18,7 +18,7 @@ export class BlogService {
     return this.http.get<User[]>(`${URL_DATA}users`);
   }
 
-  public getPostByIndex(index:number): Observable<Post> {
+  public getPostByIndex(index: number): Observable<Post> {
     return this.http.get<Post>(`${URL_DATA}posts/${index}`);
   }
 
@@ -26,8 +26,8 @@ export class BlogService {
     return this.http.get<Post[]>(`${URL_DATA}posts`);
   }
 
-  public getPostCommentsByIndex(index: number): Observable<Comment> {
-    return this.http.get<Comment>(`${URL_DATA}posts/${index}/comments`);
+  public getPostCommentsByIndex(index: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${URL_DATA}posts/${index}/comments`);
   }
 
 }
