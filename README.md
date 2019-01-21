@@ -1,4 +1,4 @@
-# Simple Blog-Site on Angular 7 (with HTML5 Video and Bootstrap 4)
+# Simple Blog-Site on Angular 7 (with HTML5 Video and Bootstrap 4) 
 
 <div align="center">
   <a href="https://github.com/StanislawVictorovich/ngBlog-Site">
